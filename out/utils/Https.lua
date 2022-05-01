@@ -4,7 +4,7 @@ local TS = require(script.Parent.Parent.include.RuntimeLib)
 local HttpService = TS.import(script, TS.getModule(script, "@rbxts", "services")).HttpService
 local LogToConsole = TS.import(script, script.Parent, "ErrorHandling").LogToConsole
 -- This is just a temporary server will change :)
-local _baseUrl = "http://server1.rovolution.me:3000/v1/roblox-api"
+local _baseUrl = "http://server1.rovolution.me:3000/api/v1/roblox-api/"
 local HTTP_HANDLER
 do
 	HTTP_HANDLER = setmetatable({}, {
@@ -26,8 +26,8 @@ do
 		local data = _param.data
 		-- send object
 		local send_object = {
-			projectID = self.apiKey,
-			apiKey = self.projectID,
+			projectID = self.projectID,
+			apiKey = self.apiKey,
 			data = data,
 		}
 		local json_Serialised
@@ -46,15 +46,14 @@ do
 			return unpack(_returns)
 		end
 		-- Ok JSON serialised, now send it
-		local response
+		local response = ""
 		local _exitType_1, _returns_1 = TS.try(function()
 			-- Send the request
 			response = HttpService:PostAsync(_baseUrl .. path, json_Serialised)
 		end, function(e)
 			-- More logging cause yay
-			warn(e)
 			LogToConsole({
-				message = "Faield to Post an Async req",
+				message = "Failed to Post an Async req",
 				debug = true,
 			})
 			return TS.TRY_RETURN, { false }
@@ -66,7 +65,7 @@ do
 		local returned_json_Decoded
 		local _exitType_2, _returns_2 = TS.try(function()
 			-- Serialise the JSON
-			returned_json_Decoded = HttpService:JSONDecode(data)
+			returned_json_Decoded = HttpService:JSONDecode(response)
 		end, function()
 			-- If it fails, log it
 			LogToConsole({

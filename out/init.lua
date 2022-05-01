@@ -61,6 +61,7 @@ do
 		})
 	end
 	function Rovolution_API:PromoteUser(groupID, userID)
+		print(self)
 		return self:SendToApi({
 			path = "promoteUser",
 			data = {

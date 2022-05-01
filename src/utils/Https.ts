@@ -4,7 +4,7 @@ import { HttpService } from '@rbxts/services';
 import { LogToConsole } from './ErrorHandling';
 
 // This is just a temporary server will change :)
-let _baseUrl = 'http://server1.rovolution.me:3000/v1/roblox-api';
+let _baseUrl = 'http://server1.rovolution.me:3000/api/v1/roblox-api/';
 
 interface IRequestOptions {
     path: string;
@@ -26,8 +26,8 @@ export class HTTP_HANDLER {
     private SendRequest({ path, data }: IRequestOptions) {
         // send object
         let send_object = {
-            projectID: this.apiKey,
-            apiKey: this.projectID,
+            projectID: this.projectID,
+            apiKey: this.apiKey,
             data,
         };
 
@@ -45,15 +45,14 @@ export class HTTP_HANDLER {
         }
 
         // Ok JSON serialised, now send it
-        let response;
+        let response = '';
         try {
             // Send the request
             response = HttpService.PostAsync(_baseUrl + path, json_Serialised);
         } catch (e) {
             // More logging cause yay
-            warn(e);
             LogToConsole({
-                message: 'Faield to Post an Async req',
+                message: 'Failed to Post an Async req',
                 debug: true,
             });
             return false;
@@ -63,7 +62,7 @@ export class HTTP_HANDLER {
         let returned_json_Decoded;
         try {
             // Serialise the JSON
-            returned_json_Decoded = HttpService.JSONDecode(data);
+            returned_json_Decoded = HttpService.JSONDecode(response);
         } catch {
             // If it fails, log it
             LogToConsole({

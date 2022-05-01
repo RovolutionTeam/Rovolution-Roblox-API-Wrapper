@@ -33,7 +33,7 @@ export default class Rovolution_API extends HTTP_HANDLER {
 
     // Group methods
 
-    public ExileUser(groupID: number, userID: number) {
+    ExileUser(groupID: number, userID: number) {
         return this.SendToApi({
             path: 'exileUser',
             data: {
@@ -43,7 +43,7 @@ export default class Rovolution_API extends HTTP_HANDLER {
         });
     }
 
-    public SetRank(groupID: number, userID: number, rank: number) {
+    SetRank(groupID: number, userID: number, rank: number) {
         return this.SendToApi({
             path: 'setRank',
             data: {
@@ -54,7 +54,8 @@ export default class Rovolution_API extends HTTP_HANDLER {
         });
     }
 
-    public PromoteUser(groupID: number, userID: number) {
+    PromoteUser(groupID: number, userID: number) {
+        print(this);
         return this.SendToApi({
             path: 'promoteUser',
             data: {
@@ -64,7 +65,7 @@ export default class Rovolution_API extends HTTP_HANDLER {
         });
     }
 
-    public DemoteUser(groupID: number, userID: number) {
+    DemoteUser(groupID: number, userID: number) {
         return this.SendToApi({
             path: 'demoteUser',
             data: {
@@ -74,7 +75,7 @@ export default class Rovolution_API extends HTTP_HANDLER {
         });
     }
 
-    public AcceptJoinRequest(groupID: number, userID: number) {
+    AcceptJoinRequest(groupID: number, userID: number) {
         return this.SendToApi({
             path: 'acceptJoinRequest',
             data: {
@@ -84,7 +85,7 @@ export default class Rovolution_API extends HTTP_HANDLER {
         });
     }
 
-    public RejectJoinRequest(groupID: number, userID: number) {
+    RejectJoinRequest(groupID: number, userID: number) {
         return this.SendToApi({
             path: 'rejectJoinRequest',
             data: {
