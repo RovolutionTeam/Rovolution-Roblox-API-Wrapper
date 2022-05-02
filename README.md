@@ -10,5 +10,5 @@ For support, join the [Discord](jHZr6nSFkv)!
 
 ## Documentation
 
-[Documentation](https://docs.rovolution.me)
+[Documentation](https://devforum.roblox.com/t/rovolution-roblox-api-handle-roblox-group-changes-in-game/1777902)
 
