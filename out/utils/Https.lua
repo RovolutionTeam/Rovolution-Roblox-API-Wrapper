@@ -4,7 +4,7 @@ local TS = require(script.Parent.Parent.include.RuntimeLib)
 local HttpService = TS.import(script, TS.getModule(script, "@rbxts", "services")).HttpService
 local LogToConsole = TS.import(script, script.Parent, "ErrorHandling").LogToConsole
 -- This is just a temporary server will change :)
-local _baseUrl = "http://server1.rovolution.me:3000/api/v1/roblox-api/"
+local _baseUrl = "https://roblox.rovolution.me/api/v1/roblox-api/"
 local HTTP_HANDLER
 do
 	HTTP_HANDLER = setmetatable({}, {
