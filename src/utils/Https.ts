@@ -4,7 +4,7 @@ import { HttpService } from '@rbxts/services';
 import { LogToConsole } from './ErrorHandling';
 
 // This is just a temporary server will change :)
-let _baseUrl = 'http://server1.rovolution.me:3000/api/v1/roblox-api/';
+let _baseUrl = 'https://roblox.rovolution.me/api/v1/roblox-api/';
 
 interface IRequestOptions {
     path: string;

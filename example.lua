@@ -11,4 +11,5 @@ local API = Rovolution_Module.new(ProjectID, API_KEY)
 -- For example promote a user
 local groupID = 7535264 -- Rovolution Group
 local userID = 3152860974 -- A test account
-API.PromoteUser(groupID, userID)
+
+API:PromoteUser(groupID, userID)
