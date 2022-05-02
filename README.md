@@ -5,7 +5,7 @@ A wrapper for the Rovolution Roblox API, written in TS and Transpilled to LUA. P
 
 ## Support
 
-For support, join the [Discord](jHZr6nSFkv)! 
+For support, join the [Discord](https://discord.gg/jHZr6nSFkv)! 
 
 
 ## Documentation
