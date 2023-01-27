@@ -3,8 +3,10 @@
 import { LogToConsole, SetDebugger } from 'utils/ErrorHandling';
 import { HTTP_HANDLER } from 'utils/Https';
 
+// Debugger set to true might change
 SetDebugger(true);
 
+// Exported as default encase other TS projects want to use it with import statements
 export default class Rovolution_API extends HTTP_HANDLER {
     // Set global
     constructor(projectID: string, apiKey: string) {
@@ -12,6 +14,7 @@ export default class Rovolution_API extends HTTP_HANDLER {
         this.VerifyKey();
     }
 
+    // Technically not necessary but it provides good debugging for broken API keys
     private VerifyKey() {
         if (this.apiKey === '') {
             LogToConsole({
@@ -32,7 +35,6 @@ export default class Rovolution_API extends HTTP_HANDLER {
     }
 
     // Group methods
-
     ExileUser(groupID: number, userID: number) {
         return this.SendToApi({
             path: 'exileUser',
